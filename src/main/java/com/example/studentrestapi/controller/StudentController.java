@@ -41,4 +41,25 @@ public class StudentController {
     public void deleteStudent(@PathVariable("id") Long id) {
         studentService.deleteStudent(id);
     }
+
+    @GetMapping("/all/firstNameAsc")
+    public List<Student> getAllAppUserByFirstName(){
+        return studentService.findAllByFirstName();
+    }
+
+    @GetMapping("/all/firstNameAsc/em")
+    public List<Student> getAllAppUserByFirstNameEm(){
+        return studentService.findAllByFirstNameEm();
+    }
+
+    @GetMapping("/all/lastNameDesc")
+    public List<Student> getAllAppUserByLastNameDesc(){
+        return studentService.findAllOrderByLastNameDesc();
+    }
+
+    @GetMapping("/all/lastNameDesc/em")
+    public List<Student> getAllAppUserByLastNameDescEm(){
+        return studentService.findAllOrderByLastNameDescEm();
+    }
+
 }
